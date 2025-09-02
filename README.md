@@ -24,3 +24,28 @@ Built on Java, Spring Boot 3.5.5, and JDK 21, FastStack is a lightweight full-st
 | Spring Boot DevTools        | 3.5.5       | Enables hot reload during development                                |
 | Jakarta Validation          | 3.0+        | Support for request parameter validation                             |
 | Frontend Assets             | HTML/CSS/JS | Static resource serving for lightweight UI or server-side rendering  |
+
+## 🚀 快速开始
+
+### 克隆项目
+```bash
+git clone https://github.com/yourname/faststack.git
+```
+
+### 构建项目
+```bash
+mvn clean install
+```
+
+## 📁 项目结构（示例）
+```
+wiselt-stack/
+├── bom/                       # BOM 文件
+│── framework/
+│       ├── framework-core/    # 核心代码
+│       ├── framework-jdbc/    # 数据库连接
+│       ├── framework-web/     # Web 层
+│       ├── framework-redis/   # Redis 集成
+├       ├── pom.xml            # Maven 配置，定义通用的插件、依赖版本
+└── README.md
+```
