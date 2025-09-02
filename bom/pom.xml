@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.wisely</groupId>
+    <artifactId>bom</artifactId>
+    <version>2.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>21</java.version>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+
+        <!-- framework -->
+        <framework.version>2.0.0-SNAPSHOT</framework.version>
+
+        <!-- 扩展jar -->
+        <print_client.version>2.0.0-SNAPSHOT</print_client.version>
+        <file_client.version>2.0.0-SNAPSHOT</file_client.version>
+
+
+        <annotation-api.version>2.1.1</annotation-api.version>
+
+        <!-- 日志相关 -->
+        <slf4j.version>2.0.17</slf4j.version>
+        <log4j2.version>2.25.1</log4j2.version>
+        <logback.version>1.5.18</logback.version>
+
+        <!-- spring and springboot -->
+        <springboot.version>3.5.5</springboot.version>
+        <springboot-admin.version>3.5.2</springboot-admin.version>
+        <spring-framework.version>6.2.10</spring-framework.version>
+
+        <!-- spring cloud -->
+        <springcloud.version>2025.0.0</springcloud.version>
+        <springcloud-alibaba.version>2023.0.3.3</springcloud-alibaba.version>
+        <nacos.version>2.4.2</nacos.version>
+        <sentinel.version>1.8.8</sentinel.version>
+
+        <!-- kafka -->
+        <spring-kafka.version>3.3.9</spring-kafka.version>
+        <apache-kafka.version>4.0.0</apache-kafka.version>
+
+        <!-- 工具类 -->
+        <lombok.version>1.18.38</lombok.version>
+        <guava.version>33.4.8-jre</guava.version>
+        <commons-lang3.version>3.18.0</commons-lang3.version>
+        <commons-pool2.version>2.12.1</commons-pool2.version>
+        <commons-fileupload.version>1.6.0</commons-fileupload.version>
+        <commons-beanutils.version>1.11.0</commons-beanutils.version>
+        <commons-collections4.version>4.5.0</commons-collections4.version>
+        <httpclient.version>4.5.13</httpclient.version>
+        <dom4j.version>2.2.0</dom4j.version>
+        <jackson-bom.version>2.19.2</jackson-bom.version>
+        <protostuff-bom.version>1.8.0</protostuff-bom.version>
+        <aspectj.version>1.9.6</aspectj.version>
+        <druid.version>1.2.23</druid.version>
+        <hikari.version>4.0.3</hikari.version>
+        <mybatis.version>2.2.2</mybatis.version>
+        <pagehelper.version>5.3.1</pagehelper.version>
+        <snakeyaml.version>2.4</snakeyaml.version>
+
+        <!-- server -->
+        <tomcat.version>10.1.44</tomcat.version>
+
+        <!-- jdbc -->
+        <mysql.version>8.0.33</mysql.version>
+        <jedis.version>6.1.0</jedis.version>
+        <lettuce.version>6.8.0.RELEASE</lettuce.version>
+
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <dependency>
+                <groupId>jakarta.annotation</groupId>
+                <artifactId>jakarta.annotation-api</artifactId>
+                <version>${annotation-api.version}</version>
+            </dependency>
+
+            <!-- 日志相关 -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-to-slf4j</artifactId>
+                <version>${log4j2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-core</artifactId>
+                <version>${logback.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-access</artifactId>
+                <version>${logback.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>${logback.version}</version>
+            </dependency>
+
+
+            <!-- spring相关 -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-aop</artifactId>
+                <version>${spring-framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-aspects</artifactId>
+                <version>${spring-framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-beans</artifactId>
+                <version>${spring-framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${spring-framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context-indexer</artifactId>
+                <version>${spring-framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context-support</artifactId>
+                <version>${spring-framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-core</artifactId>
+                <version>${spring-framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-expression</artifactId>
+                <version>${spring-framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-instrument</artifactId>
+                <version>${spring-framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-jcl</artifactId>
+                <version>${spring-framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-jdbc</artifactId>
+                <version>${spring-framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-data-jdbc</artifactId>
+                <version>${spring-framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-jms</artifactId>
+                <version>${spring-framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-messaging</artifactId>
+                <version>${spring-framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-orm</artifactId>
+                <version>${spring-framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-oxm</artifactId>
+                <version>${spring-framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-test</artifactId>
+                <version>${spring-framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-tx</artifactId>
+                <version>${spring-framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-web</artifactId>
+                <version>${spring-framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-webflux</artifactId>
+                <version>${spring-framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-webmvc</artifactId>
+                <version>${spring-framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-websocket</artifactId>
+                <version>${spring-framework.version}</version>
+            </dependency>
+
+
+            <!-- springboot -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${springboot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- Spring Cloud BOM -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${springcloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- Spring Cloud Alibaba BOM -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${springcloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+
+            <!--            <dependency>-->
+            <!--                <groupId>org.springframework.cloud</groupId>-->
+            <!--                <artifactId>spring-cloud-starter-loadbalancer</artifactId>-->
+            <!--                <version>${springcloud.version}</version>-->
+            <!--            </dependency>-->
+            <!--            <dependency>-->
+            <!--                <groupId>org.springframework.cloud</groupId>-->
+            <!--                <artifactId>spring-cloud-starter-gateway</artifactId>-->
+            <!--                <version>${springcloud.version}</version>-->
+            <!--            </dependency>-->
+
+            <!-- 服务监控 -->
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-starter-server</artifactId>
+                <version>${springboot-admin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-starter-client</artifactId>
+                <version>${springboot-admin.version}</version>
+            </dependency>
+
+            <!-- 工具类 -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-pool2</artifactId>
+                <version>${commons-pool2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${httpclient.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <!-- jackson -->
+            <dependency>
+                <groupId>com.fasterxml.jackson</groupId>
+                <artifactId>jackson-bom</artifactId>
+                <version>${jackson-bom.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>io.protostuff</groupId>
+                <artifactId>protostuff-bom</artifactId>
+                <version>${protostuff-bom.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.yaml</groupId>
+                <artifactId>snakeyaml</artifactId>
+                <version>${snakeyaml.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-fileupload</groupId>
+                <artifactId>commons-fileupload</artifactId>
+                <version>${commons-fileupload.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-beanutils</groupId>
+                <artifactId>commons-beanutils</artifactId>
+                <version>${commons-beanutils.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-collections4</artifactId>
+                <version>${commons-collections4.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.dom4j</groupId>
+                <artifactId>dom4j</artifactId>
+                <version>${dom4j.version}</version>
+            </dependency>
+
+            <!-- server -->
+            <dependency>
+                <groupId>org.apache.tomcat.embed</groupId>
+                <artifactId>tomcat-embed-core</artifactId>
+                <version>${tomcat.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.tomcat.embed</groupId>
+                <artifactId>tomcat-embed-websocket</artifactId>
+                <version>${tomcat.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.tomcat.embed</groupId>
+                <artifactId>tomcat-embed-el</artifactId>
+                <version>${tomcat.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.tomcat.embed</groupId>
+                <artifactId>tomcat-embed-jasper</artifactId>
+                <version>${tomcat.version}</version>
+            </dependency>
+
+            <!-- jdbc -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>com.google.protobuf</groupId>
+                        <artifactId>protobuf-java</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>io.lettuce</groupId>
+                <artifactId>lettuce-core</artifactId>
+                <version>${lettuce.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>redis.clients</groupId>
+                <artifactId>jedis</artifactId>
+                <version>${jedis.version}</version>
+            </dependency>
+            <!-- druid -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+            <!-- HikariCP -->
+            <dependency>
+                <groupId>com.zaxxer</groupId>
+                <artifactId>HikariCP</artifactId>
+                <version>${hikari.version}</version>
+            </dependency>
+            <!--mybatis-->
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>com.zaxxer</groupId>
+                        <artifactId>HikariCP</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <!-- mybatis的分页插件 -->
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper</artifactId>
+                <version>${pagehelper.version}</version>
+            </dependency>
+            <!-- kafka -->
+            <dependency>
+                <groupId>org.springframework.kafka</groupId>
+                <artifactId>spring-kafka</artifactId>
+                <version>${spring-kafka.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.kafka</groupId>
+                <artifactId>kafka-streams</artifactId>
+                <version>${apache-kafka.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.kafka</groupId>
+                <artifactId>kafka-clients</artifactId>
+                <version>${apache-kafka.version}</version>
+            </dependency>
+
+
+            <!-- framework -->
+            <dependency>
+                <groupId>com.wisely</groupId>
+                <artifactId>framework-all</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.wisely</groupId>
+                <artifactId>framework-core</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.wisely</groupId>
+                <artifactId>framework-jdbc</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.wisely</groupId>
+                <artifactId>framework-seata</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.wisely</groupId>
+                <artifactId>framework-web</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.wisely</groupId>
+                <artifactId>converter-core</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.wisely</groupId>
+                <artifactId>converter-web</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.wisely</groupId>
+                <artifactId>converter-static</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.wisely</groupId>
+                <artifactId>framework-redis</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.wisely</groupId>
+                <artifactId>framework-kafka</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.wisely</groupId>
+                <artifactId>framework-cloud-nacos</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.wisely</groupId>
+                <artifactId>framework-cloud-sentinel</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+
+            <!-- 扩展jar -->
+            <dependency>
+                <groupId>com.wisely</groupId>
+                <artifactId>file_client</artifactId>
+                <version>${file_client.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.wisely</groupId>
+                <artifactId>dm_client</artifactId>
+                <version>${dm_client.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.wisely</groupId>
+                <artifactId>print_client</artifactId>
+                <version>${print_client.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+</project>
