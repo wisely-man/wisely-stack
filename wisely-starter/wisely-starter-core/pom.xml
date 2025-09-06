@@ -9,7 +9,7 @@
         <artifactId>wisely-starter</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
-    <artifactId>wisely-core</artifactId>
+    <artifactId>wisely-starter-core</artifactId>
     <packaging>jar</packaging>
 
     <dependencies>
@@ -99,14 +99,7 @@
             <optional>true</optional>
         </dependency>
 
-        <!-- BCrypt 密码加密 -->
-        <dependency>
-            <groupId>org.mindrot</groupId>
-            <artifactId>jbcrypt</artifactId>
-            <version>0.4</version>
-        </dependency>
-
-        <!-- spring-context 非强制 -->
+        <!-- spring-context -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>

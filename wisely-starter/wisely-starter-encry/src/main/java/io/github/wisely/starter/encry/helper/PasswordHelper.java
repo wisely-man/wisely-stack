@@ -1,4 +1,4 @@
-package io.github.wisely.starter.core.encry.helper;
+package io.github.wisely.starter.encry.helper;
 
 import io.github.wisely.starter.core.exception.SystemException;
 import org.mindrot.jbcrypt.BCrypt;

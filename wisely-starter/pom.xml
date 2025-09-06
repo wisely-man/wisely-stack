@@ -10,6 +10,7 @@
 
     <modules>
         <module>wisely-starter-core</module>
+        <module>wisely-starter-encry</module>
     </modules>
 
     <properties>

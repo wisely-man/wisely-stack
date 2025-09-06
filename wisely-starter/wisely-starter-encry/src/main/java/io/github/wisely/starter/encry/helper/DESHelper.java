@@ -1,4 +1,4 @@
-package io.github.wisely.starter.core.encry.helper;
+package io.github.wisely.starter.encry.helper;
 
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
