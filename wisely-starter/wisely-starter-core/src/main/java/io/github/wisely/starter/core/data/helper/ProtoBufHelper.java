@@ -111,6 +111,6 @@ public final class ProtoBufHelper {
 
     /* ------------ 私有构造 ------------ */
     private ProtoBufHelper() {
-        throw new UnsupportedOperationException("ProtoBufHelper 不允许实例化");
+        throw new UnsupportedOperationException("Utility class cannot be instantiated");
     }
 }

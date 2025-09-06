@@ -16,7 +16,7 @@ public final class PasswordHelper {
     private static final SecureRandom SECURE_RANDOM = new SecureRandom();
 
     private PasswordHelper() {
-        throw new UnsupportedOperationException("密码工具类不允许实例化");
+        throw new UnsupportedOperationException("Utility class cannot be instantiated");
     }
 
     // ==================== BCrypt 密码加密 ====================

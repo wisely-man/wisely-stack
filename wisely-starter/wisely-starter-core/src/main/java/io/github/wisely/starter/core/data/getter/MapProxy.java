@@ -4,6 +4,7 @@ import com.google.common.collect.Maps;
 import io.github.wisely.starter.core.data.helper.JsonHelper;
 import io.github.wisely.starter.core.helper.ValidHelper;
 import jakarta.annotation.Nonnull;
+import org.springframework.lang.Contract;
 
 import java.util.Collection;
 import java.util.Map;
@@ -31,6 +32,7 @@ public record MapProxy<K, V>(Map<K, V> map) implements Getter<K, V> {
         return map.get(key);
     }
 
+    @Contract("null, _ -> param2")
     public V getOrDefault(K key, V defaultValue) {
         return map.getOrDefault(key, defaultValue);
     }

@@ -101,6 +101,7 @@ public class JsonHelper {
      * @return JsonNode
      */
     @Nullable
+    @Contract("null -> null; !null -> !null")
     public static <T> JsonNode obj2JsonNode(T obj) {
         return json2Obj(obj2Json(obj), JsonNode.class);
     }
@@ -113,6 +114,7 @@ public class JsonHelper {
      * @param <T>   泛型
      */
     @Nullable
+    @Contract("null,_ -> null")
     public static <T> T json2Obj(@Nullable String json, @Nonnull Class<T> clazz) {
 
         CommonExceptionEnum.PARAMETER_REQUIRED.assertNotNull(clazz, "clazz");
@@ -136,6 +138,7 @@ public class JsonHelper {
      * @param <T>  泛型
      */
     @Nullable
+    @Contract("null,_ -> null")
     public static <T> T json2Obj(@Nullable String json, @Nonnull TypeReference<T> type) {
 
         CommonExceptionEnum.PARAMETER_REQUIRED.assertNotNull(type, "type");
@@ -159,6 +162,7 @@ public class JsonHelper {
      * @param clazz 目标类
      * @return 目标类型对象
      */
+    @Contract("null,_ -> null; !null,_ -> !null")
     public static <T> T copyTo(@Nullable Object obj, @Nonnull Class<T> clazz) {
         return json2Obj(obj2Json(obj), clazz);
     }
@@ -171,6 +175,7 @@ public class JsonHelper {
      * @param type 目标类型
      * @return 目标类型对象
      */
+    @Contract("null,_ -> null; !null,_ -> !null")
     public static <T> T copyTo(@Nullable Object obj, @Nonnull TypeReference<T> type) {
         return json2Obj(obj2Json(obj), type);
     }
@@ -182,9 +187,14 @@ public class JsonHelper {
      * @param object 待转换对象
      * @return 格式化后的字符串
      */
+    @Contract("null -> null; !null -> !null")
     public static String toPrettyString(@Nullable Object object) {
+        if (ValidHelper.isNull(object)) {
+            return null;
+        }
+
         JsonNode node = obj2JsonNode(object);
-        return ValidHelper.isNull(node) ? null : node.toPrettyString();
+        return node.toPrettyString();
     }
 
 }

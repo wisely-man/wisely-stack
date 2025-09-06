@@ -669,7 +669,7 @@ public class DateHelper extends DateUtils {
 
 
     private DateHelper() {
-        throw new UnsupportedOperationException("DateHelper 不允许实例化");
+        throw new UnsupportedOperationException("Utility class cannot be instantiated");
     }
 }
 

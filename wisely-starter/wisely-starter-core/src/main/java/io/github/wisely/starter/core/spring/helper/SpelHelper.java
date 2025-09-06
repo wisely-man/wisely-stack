@@ -91,6 +91,6 @@ public class SpelHelper {
     /* -------------------------------------------------- 私有化构造方法 -------------------------------------------------- */
 
     private SpelHelper() {
-        throw new UnsupportedOperationException("No instance for you!");
+        throw new UnsupportedOperationException("Utility class cannot be instantiated");
     }
 }

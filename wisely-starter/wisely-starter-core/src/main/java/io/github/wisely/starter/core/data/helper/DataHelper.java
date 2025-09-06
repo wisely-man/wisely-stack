@@ -2,7 +2,9 @@ package io.github.wisely.starter.core.data.helper;
 
 import io.github.wisely.starter.core.helper.StringHelper;
 import jakarta.annotation.Nonnull;
+import jakarta.annotation.Nullable;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.lang.Contract;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -38,6 +40,7 @@ public class DataHelper {
 
     /* ==================== 基础类型转换 ==================== */
 
+    @Contract("null,_ -> param2")
     public static Boolean getBoolean(Object value, Boolean defaultValue) {
         if (value == null) return defaultValue;
         if (value instanceof Boolean) return (Boolean) value;
@@ -49,58 +52,69 @@ public class DataHelper {
         return defaultValue;
     }
 
+    @Contract("null,_ -> param2")
     public static Byte getByte(Object value, Byte defaultValue) {
         BigDecimal bd = toBigDecimal(value);
         return bd != null ? bd.byteValue() : defaultValue;
     }
 
+    @Contract("null,_ -> param2")
     public static Character getCharacter(Object value, Character defaultValue) {
         if (value == null) return defaultValue;
         String str = value.toString();
         return str.isEmpty() ? defaultValue : str.charAt(0);
     }
 
+    @Contract("null,_ -> param2")
     public static Short getShort(Object value, Short defaultValue) {
         BigDecimal bd = toBigDecimal(value);
         return bd != null ? bd.shortValue() : defaultValue;
     }
 
+    @Contract("null,_ -> param2")
     public static Integer getInt(Object value, Integer defaultValue) {
         BigDecimal bd = toBigDecimal(value);
         return bd != null ? bd.intValue() : defaultValue;
     }
 
+    @Contract("null,_ -> param2")
     public static Long getLong(Object value, Long defaultValue) {
         BigDecimal bd = toBigDecimal(value);
         return bd != null ? bd.longValue() : defaultValue;
     }
 
+    @Contract("null,_ -> param2")
     public static Float getFloat(Object value, Float defaultValue) {
         BigDecimal bd = toBigDecimal(value);
         return bd != null ? bd.floatValue() : defaultValue;
     }
 
+    @Contract("null,_ -> param2")
     public static Double getDouble(Object value, Double defaultValue) {
         BigDecimal bd = toBigDecimal(value);
         return bd != null ? bd.doubleValue() : defaultValue;
     }
 
+    @Contract("null,_ -> param2")
     public static BigInteger getBigInt(Object value, BigInteger defaultValue) {
         BigDecimal bd = toBigDecimal(value);
         return bd != null ? bd.toBigInteger() : defaultValue;
     }
 
+    @Contract("null,_ -> param2")
     public static BigDecimal getBigDecimal(Object value, BigDecimal defaultValue) {
         BigDecimal bd = toBigDecimal(value);
         return bd != null ? bd : defaultValue;
     }
 
+    @Contract("null,_ -> param2")
     public static String getString(Object value, String defaultValue) {
         return value == null ? defaultValue : value.toString();
     }
 
     /* ==================== 集合类型转换 ==================== */
 
+    @Nonnull
     public static HashSet<?> getHashSet(Object value) {
         if (value instanceof Collection) {
             return new HashSet<>((Collection<?>) value);
@@ -108,6 +122,7 @@ public class DataHelper {
         return new HashSet<>();
     }
 
+    @Nonnull
     public static TreeSet<?> getTreeSet(Object value) {
         if (value instanceof Collection) {
             return new TreeSet<>((Collection<?>) value);
@@ -115,6 +130,7 @@ public class DataHelper {
         return new TreeSet<>();
     }
 
+    @Nonnull
     public static ArrayList<?> getArrayList(Object value) {
         if (value instanceof Collection) {
             return new ArrayList<>((Collection<?>) value);
@@ -122,6 +138,7 @@ public class DataHelper {
         return new ArrayList<>();
     }
 
+    @Nonnull
     public static LinkedList<?> getLinkedList(Object value) {
         if (value instanceof Collection) {
             return new LinkedList<>((Collection<?>) value);
@@ -138,7 +155,7 @@ public class DataHelper {
      * <p>
      * 若需支持本地化/自定义格式，可在此扩展 DecimalFormat。
      */
-
+    @Nullable
     private static BigDecimal toBigDecimal(Object value) {
 
         switch (value) {
@@ -186,7 +203,8 @@ public class DataHelper {
      * @param b2 加数2
      * @return 和
      */
-    public static BigDecimal add(Object b1, Object b2) {
+    @Nonnull
+    public static BigDecimal add(@Nullable Object b1, @Nullable Object b2) {
         return getBigDecimal(b1, BigDecimal.ZERO).add(getBigDecimal(b2, BigDecimal.ZERO));
     }
 
@@ -197,7 +215,8 @@ public class DataHelper {
      * @param subtrahend 减数
      * @return 差
      */
-    public static BigDecimal subtract(Object minuend, Object subtrahend) {
+    @Nonnull
+    public static BigDecimal subtract(@Nullable Object minuend, @Nullable Object subtrahend) {
         return getBigDecimal(subtrahend, BigDecimal.ZERO).subtract(getBigDecimal(minuend, BigDecimal.ZERO));
     }
 
@@ -208,7 +227,8 @@ public class DataHelper {
      * @param b2 因数2
      * @return 乘积
      */
-    public static BigDecimal multiply(Object b1, Object b2) {
+    @Nonnull
+    public static BigDecimal multiply(@Nullable Object b1, @Nullable Object b2) {
         return getBigDecimal(b1, BigDecimal.ZERO).multiply(getBigDecimal(b2, BigDecimal.ZERO));
     }
 
@@ -220,7 +240,8 @@ public class DataHelper {
      * @param scale    小数位精度
      * @return 商
      */
-    public static BigDecimal divide(Object dividend, Object divisor, int scale) {
+    @Nonnull
+    public static BigDecimal divide(@Nullable Object dividend, @Nullable Object divisor, int scale) {
 
         BigDecimal dividendBig = getBigDecimal(dividend, BigDecimal.ZERO);
         BigDecimal divisorBig = getBigDecimal(divisor, BigDecimal.ZERO);
@@ -239,6 +260,7 @@ public class DataHelper {
      * @param denominator 分母
      * @return 百分比
      */
+    @Nonnull
     public static BigDecimal percent(Object numerator, Object denominator) {
         return divide(getBigDecimal(numerator, BigDecimal.ZERO).multiply(HUNDRED), denominator, 2);
     }
@@ -249,6 +271,7 @@ public class DataHelper {
      * @param num 数值
      * @return 格式化后的字符串
      */
+    @Nonnull
     public static String getDecimalString(Object num) {
         return format(num, "#,###.0", Locale.getDefault());
     }
@@ -262,6 +285,7 @@ public class DataHelper {
      * @param locale  地区
      * @return 格式化字符串
      */
+    @Nonnull
     public static String format(Object number, String pattern, Locale locale) {
         BigDecimal t = toBigDecimal(number);
         DecimalFormat df = new DecimalFormat(pattern);
@@ -277,6 +301,7 @@ public class DataHelper {
      * @param pattern 对应的格式模式
      * @return BigDecimal 精确值，失败返回 null
      */
+    @Nullable
     public static BigDecimal parse(String text, String pattern) {
         return parse(text, pattern, Locale.getDefault());
     }
@@ -289,6 +314,7 @@ public class DataHelper {
      * @param locale  地区
      * @return BigDecimal，失败返回 null
      */
+    @Nullable
     public static BigDecimal parse(String text, String pattern, Locale locale) {
         if (text == null || text.trim().isEmpty() || pattern == null || pattern.isEmpty()) {
             return null;
@@ -312,6 +338,7 @@ public class DataHelper {
      * @param locale 地区
      * @return BigDecimal，失败返回 null
      */
+    @Nullable
     public static BigDecimal parseGeneral(String text, Locale locale) {
 
         if (StringHelper.isBlank(text)) {
@@ -396,6 +423,6 @@ public class DataHelper {
 
 
     private DataHelper() {
-        throw new UnsupportedOperationException("DataHelper cannot be instantiated");
+        throw new UnsupportedOperationException("Utility class cannot be instantiated");
     }
 }

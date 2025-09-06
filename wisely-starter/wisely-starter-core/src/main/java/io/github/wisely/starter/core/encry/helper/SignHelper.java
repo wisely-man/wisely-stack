@@ -21,7 +21,7 @@ public final class SignHelper {
     private static final int BUFFER_SIZE = 8192;
 
     private SignHelper() {
-        throw new UnsupportedOperationException("签名工具类不允许实例化");
+        throw new UnsupportedOperationException("Utility class cannot be instantiated");
     }
 
     // ==================== MD5 相关方法 ====================
