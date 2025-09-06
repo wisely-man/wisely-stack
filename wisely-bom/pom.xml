@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.wisely</groupId>
+    <groupId>io.github.wisely-man</groupId>
     <artifactId>wisely-bom</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -15,14 +15,11 @@
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
 
-        <!-- framework -->
-        <framework.version>1.0.0-SNAPSHOT</framework.version>
-
-        <!-- 扩展jar -->
-        <print_client.version>1.0.0-SNAPSHOT</print_client.version>
-        <file_client.version>1.0.0-SNAPSHOT</file_client.version>
+        <!-- wisely -->
+        <wisely.version>1.0.0-SNAPSHOT</wisely.version>
 
 
+        <!-- 注解 -->
         <annotation-api.version>2.1.1</annotation-api.version>
 
         <!-- 日志相关 -->
@@ -445,81 +442,76 @@
 
             <!-- framework -->
             <dependency>
-                <groupId>com.wisely</groupId>
-                <artifactId>framework-all</artifactId>
-                <version>${framework.version}</version>
+                <groupId>io.github.wisely-man</groupId>
+                <artifactId>wisely-all</artifactId>
+                <version>${wisely.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.wisely</groupId>
-                <artifactId>framework-core</artifactId>
-                <version>${framework.version}</version>
+                <groupId>io.github.wisely-man</groupId>
+                <artifactId>wisely-starter-core</artifactId>
+                <version>${wisely.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.wisely</groupId>
-                <artifactId>framework-jdbc</artifactId>
-                <version>${framework.version}</version>
+                <groupId>io.github.wisely-man</groupId>
+                <artifactId>wisely-starter-jdbc</artifactId>
+                <version>${wisely.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.wisely</groupId>
-                <artifactId>framework-seata</artifactId>
-                <version>${framework.version}</version>
+                <groupId>io.github.wisely-man</groupId>
+                <artifactId>wisely-starter-seata</artifactId>
+                <version>${wisely.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.wisely</groupId>
-                <artifactId>framework-web</artifactId>
-                <version>${framework.version}</version>
+                <groupId>io.github.wisely-man</groupId>
+                <artifactId>wisely-starter-web</artifactId>
+                <version>${wisely.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.wisely</groupId>
-                <artifactId>converter-core</artifactId>
-                <version>${framework.version}</version>
+                <groupId>io.github.wisely-man</groupId>
+                <artifactId>wisely-starter-converter-core</artifactId>
+                <version>${wisely.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.wisely</groupId>
-                <artifactId>converter-web</artifactId>
-                <version>${framework.version}</version>
+                <groupId>io.github.wisely-man</groupId>
+                <artifactId>wisely-starter-converter-web</artifactId>
+                <version>${wisely.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.wisely</groupId>
-                <artifactId>converter-static</artifactId>
-                <version>${framework.version}</version>
+                <groupId>io.github.wisely-man</groupId>
+                <artifactId>wisely-starter-converter-static</artifactId>
+                <version>${wisely.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.wisely</groupId>
-                <artifactId>framework-redis</artifactId>
-                <version>${framework.version}</version>
+                <groupId>io.github.wisely-man</groupId>
+                <artifactId>wisely-starter-redis</artifactId>
+                <version>${wisely.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.wisely</groupId>
-                <artifactId>framework-kafka</artifactId>
-                <version>${framework.version}</version>
+                <groupId>io.github.wisely-man</groupId>
+                <artifactId>wisely-starter-kafka</artifactId>
+                <version>${wisely.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.wisely</groupId>
-                <artifactId>framework-cloud-nacos</artifactId>
-                <version>${framework.version}</version>
+                <groupId>io.github.wisely-man</groupId>
+                <artifactId>wisely-starter-cloud-nacos</artifactId>
+                <version>${wisely.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.wisely</groupId>
-                <artifactId>framework-cloud-sentinel</artifactId>
-                <version>${framework.version}</version>
+                <groupId>io.github.wisely-man</groupId>
+                <artifactId>wisely-starter-cloud-sentinel</artifactId>
+                <version>${wisely.version}</version>
             </dependency>
 
             <!-- 扩展jar -->
             <dependency>
-                <groupId>com.wisely</groupId>
-                <artifactId>file_client</artifactId>
-                <version>${file_client.version}</version>
+                <groupId>io.github.wisely-man</groupId>
+                <artifactId>wisely-starter-file-client</artifactId>
+                <version>${wisely.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.wisely</groupId>
-                <artifactId>dm_client</artifactId>
-                <version>${dm_client.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.wisely</groupId>
-                <artifactId>print_client</artifactId>
-                <version>${print_client.version}</version>
+                <groupId>io.github.wisely-man</groupId>
+                <artifactId>wisely-starter-print-client</artifactId>
+                <version>${wisely.version}</version>
             </dependency>
 
         </dependencies>

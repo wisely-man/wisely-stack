@@ -1,3 +1,3 @@
-com.wisely.starter.core.data.plugins.InfrastructurePlugin
-com.wisely.starter.core.spring.plugins.SpringPlugin
-com.wisely.starter.core.thread.plugins.AsyncPlugin
+io.github.wisely.starter.core.data.plugins.InfrastructurePlugin
+io.github.wisely.starter.core.spring.plugins.SpringPlugin
+io.github.wisely.starter.core.thread.plugins.AsyncPlugin

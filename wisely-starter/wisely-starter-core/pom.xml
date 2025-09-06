@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.wisely</groupId>
+        <groupId>io.github.wisely-man</groupId>
         <artifactId>wisely-starter</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
-    <artifactId>framework-core</artifactId>
+    <artifactId>wisely-core</artifactId>
     <packaging>jar</packaging>
 
     <dependencies>
