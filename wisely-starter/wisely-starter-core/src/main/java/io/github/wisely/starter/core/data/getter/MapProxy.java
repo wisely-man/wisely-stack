@@ -17,7 +17,7 @@ import java.util.function.BiConsumer;
  *
  * @param <K> 键类型
  * @param <V> 值类型
- * @author Big_程
+ * @author wisely-man
  * @since 2.0.0
  */
 public record MapProxy<K, V>(Map<K, V> map) implements Getter<K, V> {
