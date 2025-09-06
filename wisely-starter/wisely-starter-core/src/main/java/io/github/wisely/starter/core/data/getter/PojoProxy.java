@@ -137,10 +137,6 @@ public class PojoProxy implements Getter<String, Object> {
         }
 
         setValue(current, parts[parts.length - 1], value);
-
-        Object justWritten = getValue(current, "city");
-        System.out.println(">>> 刚刚写完： " + justWritten);
-        System.out.println(">>> 当前实例： " + System.identityHashCode(current));
     }
 
     private Object createIntermediateObject(Object parent, String fieldName) {
