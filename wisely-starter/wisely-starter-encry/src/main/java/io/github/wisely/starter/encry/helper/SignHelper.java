@@ -20,10 +20,6 @@ public final class SignHelper {
 
     private static final int BUFFER_SIZE = 8192;
 
-    private SignHelper() {
-        throw new UnsupportedOperationException("Utility class cannot be instantiated");
-    }
-
     // ==================== MD5 相关方法 ====================
 
     /**
@@ -177,5 +173,10 @@ public final class SignHelper {
             hexString.append(HEX_DIGITS[b & 0x0F]);
         }
         return hexString.toString();
+    }
+
+
+    private SignHelper() {
+        throw new UnsupportedOperationException("Utility class cannot be instantiated");
     }
 }

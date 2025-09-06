@@ -15,10 +15,6 @@ public final class PasswordHelper {
     private static final int BCRYPT_DEFAULT_ROUNDS = 12;
     private static final SecureRandom SECURE_RANDOM = new SecureRandom();
 
-    private PasswordHelper() {
-        throw new UnsupportedOperationException("Utility class cannot be instantiated");
-    }
-
     // ==================== BCrypt 密码加密 ====================
 
     /**
@@ -172,5 +168,10 @@ public final class PasswordHelper {
             characters[i] = temp;
         }
         return new String(characters);
+    }
+
+
+    private PasswordHelper() {
+        throw new UnsupportedOperationException("Utility class cannot be instantiated");
     }
 }
