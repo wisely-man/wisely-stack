@@ -40,12 +40,12 @@ mvn clean install
 ## 📁 项目结构（示例）
 ```
 wiselt-stack/
-├── bom/                       # BOM 文件
-│── framework/
-│       ├── framework-core/    # 核心代码
-│       ├── framework-jdbc/    # 数据库连接
-│       ├── framework-web/     # Web 层
-│       ├── framework-redis/   # Redis 集成
-├       ├── pom.xml            # Maven 配置，定义通用的插件、依赖版本
+├── wisely-bom/                       # BOM 文件
+│── wisely-starter/
+│       ├── wisely-starter-core/    # 核心代码
+│       ├── wisely-starter-jdbc/    # 数据库连接
+│       ├── wisely-starter-web/     # Web 层
+│       ├── wisely-starter-redis/   # Redis 集成
+├       ├── pom.xml                 # Maven 配置，定义通用的插件、依赖版本
 └── README.md
 ```
