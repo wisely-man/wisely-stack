@@ -29,7 +29,7 @@ Built on Java, Spring Boot 3.5.5, and JDK 21, FastStack is a lightweight full-st
 
 ### 克隆项目
 ```bash
-git clone https://github.com/yourname/faststack.git
+git clone https://github.com/wisely-man/wisely-stack.git
 ```
 
 ### 构建项目
