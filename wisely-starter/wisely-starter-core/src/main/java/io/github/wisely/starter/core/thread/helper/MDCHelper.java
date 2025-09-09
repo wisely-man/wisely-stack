@@ -1,5 +1,6 @@
 package io.github.wisely.starter.core.thread.helper;
 
+import lombok.experimental.UtilityClass;
 import org.slf4j.MDC;
 
 import java.util.Map;
@@ -8,6 +9,7 @@ import java.util.Map;
  * MDC线程包装类
  *    实现wisely-tract-id的跨线程传递
  */
+@UtilityClass
 public class MDCHelper {
 
     public static Runnable wrap(Runnable runnable) {

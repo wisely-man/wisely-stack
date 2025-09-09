@@ -19,8 +19,8 @@ Built on Java, Spring Boot 3.5.5, and JDK 21, FastStack is a lightweight full-st
 | Spring Cloud                | 2025.0.0    | Cloud-native development framework                                   |
 | MyBatis                     | 3.5.13+     | Persistence framework with dynamic SQL and XML mapping support       |
 | MyBatis-Spring-Boot-Starter | 3.0.3+      | Seamless Spring Boot integration                                     |
-| Lombok                      | 1.18.36+    | Reduces boilerplate code (e.g. getters, setters, toString)           |
-| HikariCP                    | Built-in    | Default high-performance database connection pool                    |
+| Lombok                      | 1.18.38     | Reduces boilerplate code (e.g. getters, setters, toString)           |
+| HikariCP                    | 6.4.2       | Default high-performance database connection pool                    |
 | Spring Boot DevTools        | 3.5.5       | Enables hot reload during development                                |
 | Jakarta Validation          | 3.0+        | Support for request parameter validation                             |
 | Frontend Assets             | HTML/CSS/JS | Static resource serving for lightweight UI or server-side rendering  |

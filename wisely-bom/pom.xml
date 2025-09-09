@@ -20,7 +20,7 @@
 
 
         <!-- 注解 -->
-        <annotation-api.version>2.1.1</annotation-api.version>
+        <annotation-api.version>3.0.0</annotation-api.version>
 
         <!-- 日志相关 -->
         <slf4j.version>2.0.17</slf4j.version>
@@ -56,7 +56,7 @@
         <protostuff-bom.version>1.8.0</protostuff-bom.version>
         <aspectj.version>1.9.6</aspectj.version>
         <druid.version>1.2.23</druid.version>
-        <hikari.version>4.0.3</hikari.version>
+        <hikari.version>6.3.2</hikari.version>
         <mybatis.version>2.2.2</mybatis.version>
         <pagehelper.version>5.3.1</pagehelper.version>
         <snakeyaml.version>2.4</snakeyaml.version>
@@ -65,9 +65,9 @@
         <tomcat.version>10.1.44</tomcat.version>
 
         <!-- jdbc -->
-        <mysql.version>8.0.33</mysql.version>
-        <jedis.version>6.1.0</jedis.version>
-        <lettuce.version>6.8.0.RELEASE</lettuce.version>
+        <mysql.version>9.4.0</mysql.version>
+        <jedis.version>6.2.0</jedis.version>
+        <lettuce.version>6.8.1.RELEASE</lettuce.version>
 
     </properties>
 

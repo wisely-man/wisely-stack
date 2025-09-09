@@ -17,6 +17,7 @@ import io.github.wisely.starter.core.helper.ValidHelper;
 import io.github.wisely.starter.core.spring.helper.SpringHelper;
 import jakarta.annotation.Nonnull;
 import jakarta.annotation.Nullable;
+import lombok.experimental.UtilityClass;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.lang.Contract;
 
@@ -26,11 +27,9 @@ import java.text.SimpleDateFormat;
 /**
  * JSON转换处理工具类
  */
+@UtilityClass
 @Slf4j
 public class JsonHelper {
-
-    private JsonHelper() {
-    }
 
     private static ObjectMapper OBJECT_MAPPER;
 

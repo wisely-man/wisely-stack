@@ -3,6 +3,7 @@ package io.github.wisely.starter.core.spring.helper;
 import io.github.wisely.starter.core.exception.eum.CommonExceptionEnum;
 import io.github.wisely.starter.core.helper.ValidHelper;
 import jakarta.annotation.Nonnull;
+import lombok.experimental.UtilityClass;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
@@ -10,6 +11,7 @@ import org.springframework.context.ApplicationContext;
 /**
  * Spring工具类
  */
+@UtilityClass
 @Slf4j
 public class SpringHelper {
 

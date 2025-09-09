@@ -2,6 +2,7 @@ package io.github.wisely.starter.core.spring.helper;
 
 import io.github.wisely.starter.core.helper.StringHelper;
 import io.github.wisely.starter.core.helper.ValidHelper;
+import lombok.experimental.UtilityClass;
 import org.springframework.core.env.Environment;
 
 
@@ -9,11 +10,8 @@ import org.springframework.core.env.Environment;
  * ConfigHelper
  * 基于 ENVIRONMENT
  */
+@UtilityClass
 public class ConfigHelper {
-
-    private ConfigHelper() {
-        throw new UnsupportedOperationException("Utility class cannot be instantiated");
-    }
 
     private static Environment INSTANCE;
 

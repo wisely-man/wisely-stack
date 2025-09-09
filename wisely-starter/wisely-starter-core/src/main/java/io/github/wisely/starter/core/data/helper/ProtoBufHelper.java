@@ -6,6 +6,7 @@ import io.protostuff.Schema;
 import io.protostuff.runtime.RuntimeSchema;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.experimental.UtilityClass;
 
 import java.util.Collection;
 import java.util.Map;
@@ -16,6 +17,7 @@ import java.util.Set;
  * 基于 Protostuff 的零依赖序列化工具。
  * 线程安全、空指针安全、自动回收 buffer。
  */
+@UtilityClass
 public final class ProtoBufHelper {
 
     /* ------------ 常量 ------------ */
@@ -36,7 +38,7 @@ public final class ProtoBufHelper {
      * @param obj 需要序列化的对象
      * @return 序列化后的二进制数组
      */
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({"rawtypes", "unchecked"})
     public static byte[] serialize(Object obj) {
 
 
@@ -109,8 +111,4 @@ public final class ProtoBufHelper {
 
     }
 
-    /* ------------ 私有构造 ------------ */
-    private ProtoBufHelper() {
-        throw new UnsupportedOperationException("Utility class cannot be instantiated");
-    }
 }

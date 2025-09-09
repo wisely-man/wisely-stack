@@ -5,6 +5,7 @@ import com.google.common.base.Splitter;
 import com.google.common.collect.Lists;
 import io.github.wisely.starter.core.data.getter.MapProxy;
 import io.github.wisely.starter.core.data.helper.DataHelper;
+import lombok.experimental.UtilityClass;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.Strings;
 
@@ -20,6 +21,7 @@ import java.util.stream.Stream;
 /**
  * org.apache.commons.lang3.StringUtils
  */
+@UtilityClass
 public class StringHelper extends StringUtils {
 
     /**
@@ -388,9 +390,5 @@ public class StringHelper extends StringUtils {
         int len = trimmed.length();
         return len >= min && len <= max;
     }
-
-    private StringHelper() {
-        throw new UnsupportedOperationException("Utility class cannot be instantiated");
-    }
-
+    
 }

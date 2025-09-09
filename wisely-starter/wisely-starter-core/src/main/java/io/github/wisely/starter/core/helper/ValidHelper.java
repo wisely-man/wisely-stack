@@ -1,6 +1,7 @@
 package io.github.wisely.starter.core.helper;
 
 
+import lombok.experimental.UtilityClass;
 import org.springframework.lang.Contract;
 import org.springframework.lang.Nullable;
 
@@ -15,14 +16,8 @@ import java.util.Objects;
  * 所有方法均为静态无状态，线程安全。
  * </p>
  */
+@UtilityClass
 public class ValidHelper {
-
-    /**
-     * 工具类禁止实例化
-     */
-    private ValidHelper() {
-        throw new UnsupportedOperationException("Utility class cannot be instantiated");
-    }
 
     // ======================================
     // =           空值判断

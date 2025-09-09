@@ -1,5 +1,7 @@
 package io.github.wisely.starter.encry.helper;
 
+import lombok.experimental.UtilityClass;
+
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
@@ -13,6 +15,7 @@ import java.security.spec.AlgorithmParameterSpec;
 /**
  * DESHelper
  */
+@UtilityClass
 public class DESHelper {
     /**
      * 密钥算法

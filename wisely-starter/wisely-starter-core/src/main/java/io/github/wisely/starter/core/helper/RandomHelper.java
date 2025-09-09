@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import io.github.wisely.starter.core.exception.SystemException;
 import io.github.wisely.starter.core.exception.ValidationException;
 import jakarta.annotation.Nonnull;
+import lombok.experimental.UtilityClass;
 
 import java.util.Collection;
 import java.util.List;
@@ -14,6 +15,7 @@ import java.util.concurrent.ThreadLocalRandom;
  * RandomHelper
  * 随机数工具类
  */
+@UtilityClass
 public class RandomHelper {
 
 

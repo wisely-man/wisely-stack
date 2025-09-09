@@ -3,6 +3,7 @@ package io.github.wisely.starter.core.data.helper;
 import io.github.wisely.starter.core.helper.StringHelper;
 import jakarta.annotation.Nonnull;
 import jakarta.annotation.Nullable;
+import lombok.experimental.UtilityClass;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.lang.Contract;
 
@@ -19,6 +20,7 @@ import java.util.*;
  * DataHelper
  * 数据处理工具类
  */
+@UtilityClass
 @Slf4j
 public class DataHelper {
 
@@ -419,10 +421,5 @@ public class DataHelper {
         } catch (NumberFormatException e) {
             return "";
         }
-    }
-
-
-    private DataHelper() {
-        throw new UnsupportedOperationException("Utility class cannot be instantiated");
     }
 }

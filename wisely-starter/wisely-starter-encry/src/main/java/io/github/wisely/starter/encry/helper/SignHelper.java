@@ -1,6 +1,7 @@
 package io.github.wisely.starter.encry.helper;
 
 import io.github.wisely.starter.core.exception.SystemException;
+import lombok.experimental.UtilityClass;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -12,6 +13,7 @@ import java.security.MessageDigest;
  * 签名工具类
  * 提供文件和数据内容的哈希签名功能
  */
+@UtilityClass
 public final class SignHelper {
 
     private static final char[] HEX_DIGITS = {
@@ -174,9 +176,5 @@ public final class SignHelper {
         }
         return hexString.toString();
     }
-
-
-    private SignHelper() {
-        throw new UnsupportedOperationException("Utility class cannot be instantiated");
-    }
+    
 }

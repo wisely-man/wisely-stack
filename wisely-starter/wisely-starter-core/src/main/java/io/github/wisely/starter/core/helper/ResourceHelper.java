@@ -1,6 +1,7 @@
 package io.github.wisely.starter.core.helper;
 
 import io.github.wisely.starter.core.exception.SystemException;
+import lombok.experimental.UtilityClass;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
@@ -14,13 +15,10 @@ import java.io.InputStream;
 /**
  * ResourceHelper
  */
+@UtilityClass
 @Slf4j
 public class ResourceHelper {
-
-    private ResourceHelper() {
-        throw new UnsupportedOperationException("Utility class cannot be instantiated");
-    }
-
+    
     private final static ResourcePatternResolver RESOURCE_RESOLVER = new PathMatchingResourcePatternResolver();
 
     /**

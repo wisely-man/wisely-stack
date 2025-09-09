@@ -1,6 +1,7 @@
 package io.github.wisely.starter.core.helper;
 
 import io.github.wisely.starter.core.exception.SystemException;
+import lombok.experimental.UtilityClass;
 import org.dom4j.Document;
 import org.dom4j.io.SAXReader;
 import org.xml.sax.EntityResolver;
@@ -19,11 +20,8 @@ import java.io.InputStream;
  * 所有方法均为静态无状态，线程安全。
  * </p>
  */
+@UtilityClass
 public class XmlHelper {
-
-    private XmlHelper() {
-        throw new UnsupportedOperationException("Utility class cannot be instantiated");
-    }
 
     /**
      * 获取document

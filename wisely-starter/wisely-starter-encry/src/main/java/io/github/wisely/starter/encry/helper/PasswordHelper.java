@@ -1,6 +1,7 @@
 package io.github.wisely.starter.encry.helper;
 
 import io.github.wisely.starter.core.exception.SystemException;
+import lombok.experimental.UtilityClass;
 import org.mindrot.jbcrypt.BCrypt;
 
 import java.security.SecureRandom;
@@ -10,6 +11,7 @@ import java.util.Base64;
  * 密码加密工具类
  * 使用 BCrypt 算法进行安全的密码哈希处理
  */
+@UtilityClass
 public final class PasswordHelper {
 
     private static final int BCRYPT_DEFAULT_ROUNDS = 12;
@@ -170,8 +172,4 @@ public final class PasswordHelper {
         return new String(characters);
     }
 
-
-    private PasswordHelper() {
-        throw new UnsupportedOperationException("Utility class cannot be instantiated");
-    }
 }

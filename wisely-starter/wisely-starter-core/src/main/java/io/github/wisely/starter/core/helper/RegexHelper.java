@@ -1,16 +1,15 @@
 package io.github.wisely.starter.core.helper;
 
+import lombok.experimental.UtilityClass;
+
 import java.util.regex.Pattern;
 
 /**
  * RegexHelper
  * 正则工具类
  */
+@UtilityClass
 public class RegexHelper {
-
-    private RegexHelper() {
-
-    }
 
     // Empty
     public static final Pattern emptyRegex = Pattern.compile("");

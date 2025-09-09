@@ -5,6 +5,7 @@ import com.google.common.cache.CacheBuilder;
 import io.github.wisely.starter.core.exception.eum.CommonExceptionEnum;
 import io.github.wisely.starter.core.helper.ValidHelper;
 import lombok.NonNull;
+import lombok.experimental.UtilityClass;
 import org.springframework.expression.EvaluationContext;
 import org.springframework.expression.Expression;
 import org.springframework.expression.ExpressionParser;
@@ -15,8 +16,8 @@ import org.springframework.expression.spel.support.StandardEvaluationContext;
 import java.lang.reflect.Method;
 import java.time.Duration;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
+@UtilityClass
 public class SpelHelper {
 
     /**
@@ -88,9 +89,4 @@ public class SpelHelper {
         return EXPRESSION_CACHE.asMap().computeIfAbsent(expression, PARSER::parseExpression);
     }
 
-    /* -------------------------------------------------- 私有化构造方法 -------------------------------------------------- */
-
-    private SpelHelper() {
-        throw new UnsupportedOperationException("Utility class cannot be instantiated");
-    }
 }

@@ -3,9 +3,10 @@ package io.github.wisely.starter.core.data.helper;
 import io.github.wisely.starter.core.data.eum.*;
 import io.github.wisely.starter.core.data.eum.YearMonth;
 import io.github.wisely.starter.core.exception.eum.CommonExceptionEnum;
+import io.github.wisely.starter.core.helper.ValidHelper;
+import lombok.experimental.UtilityClass;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.time.DateUtils;
-import io.github.wisely.starter.core.helper.*;
 
 import java.text.ParseException;
 import java.time.*;
@@ -20,6 +21,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * org.apache.commons.lang3.time.DateUtils
  * 基础上扩展 LocalDateTime
  */
+@UtilityClass
 @Slf4j
 public class DateHelper extends DateUtils {
 
@@ -666,10 +668,5 @@ public class DateHelper extends DateUtils {
         return ValidHelper.isNull(dateObj) ? null : dayEnd(getLocalDateTime(dateObj)).format(DateTimeFormatter.ofPattern(pattern));
     }
 
-
-
-    private DateHelper() {
-        throw new UnsupportedOperationException("Utility class cannot be instantiated");
-    }
 }
 
