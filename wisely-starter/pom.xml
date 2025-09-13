@@ -11,6 +11,7 @@
     <modules>
         <module>wisely-starter-core</module>
         <module>wisely-starter-encry</module>
+        <module>wisely-starter-web</module>
     </modules>
 
     <properties>
