@@ -7,6 +7,7 @@ import io.github.wisely.core.helper.ValidHelper;
 import jakarta.annotation.Nonnull;
 import org.springframework.beans.BeanWrapper;
 import org.springframework.beans.BeanWrapperImpl;
+import org.springframework.beans.NullValueInNestedPathException;
 import org.springframework.beans.PropertyAccessorFactory;
 import org.springframework.core.convert.support.DefaultConversionService;
 
@@ -48,8 +49,10 @@ public class PojoProxy implements Getter<String, Object> {
 
         try {
             return wrapper.getPropertyValue(fieldName);
-        } catch (Exception e) {
-            throw SystemException.of(e, "Failed to get field: " + fieldName);
+        } catch (NullValueInNestedPathException e) {
+            return null;
+        } catch (Exception ex) {
+            throw SystemException.of(ex, "Failed to get field: " + fieldName);
         }
     }
 

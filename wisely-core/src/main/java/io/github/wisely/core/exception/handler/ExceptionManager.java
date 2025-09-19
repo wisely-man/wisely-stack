@@ -4,7 +4,7 @@ package io.github.wisely.core.exception.handler;
 import com.google.common.collect.Range;
 import com.google.common.collect.TreeRangeMap;
 import io.github.wisely.core.exception.*;
-import io.github.wisely.starter.core.exception.*;
+import io.github.wisely.core.exception.*;
 import io.github.wisely.core.exception.eum.CommonExceptionEnum;
 import io.github.wisely.core.helper.ValidHelper;
 import lombok.NonNull;
