@@ -1,6 +1,5 @@
 package io.github.wisely.starter.web.exception;
 
-
 import io.github.wisely.starter.core.exception.BusinessException;
 import io.github.wisely.starter.core.exception.eum.CommonExceptionEnum;
 
