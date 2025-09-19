@@ -1,6 +1,6 @@
 package io.github.wisely.encryption.helper;
 
-import io.github.wisely.starter.core.exception.SystemException;
+import io.github.wisely.core.exception.SystemException;
 import lombok.experimental.UtilityClass;
 
 import java.io.File;
