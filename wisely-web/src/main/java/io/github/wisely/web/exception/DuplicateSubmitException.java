@@ -19,9 +19,7 @@ public class DuplicateSubmitException extends BusinessException {
 
     static {
         // 注册重复提交code码
-        ExceptionManager.addRange(Range.closed(5001, 5002), (code, message, objects) -> {
-            throw DuplicateSubmitException.of(code, message, objects);
-        });
+        ExceptionManager.addRange(Range.closed(5001, 5002), DuplicateSubmitException::of);
     }
 
     public DuplicateSubmitException(Throwable rootCause, int code, String message, Object... objects) {

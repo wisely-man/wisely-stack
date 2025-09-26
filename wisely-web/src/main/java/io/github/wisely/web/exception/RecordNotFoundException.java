@@ -17,9 +17,9 @@ public class RecordNotFoundException extends BusinessException {
     private static final long serialVersionUID = -2079532394198823189L;
 
     static {
-        ExceptionManager.addRange(Range.closed(5003, 5003), (code, message, objects) -> {
-            throw RecordNotFoundException.of(objects);
-        });
+        ExceptionManager.addRange(
+                Range.closed(5003, 5003),
+                (code, message, objects) -> RecordNotFoundException.of(objects));
     }
 
     @Override

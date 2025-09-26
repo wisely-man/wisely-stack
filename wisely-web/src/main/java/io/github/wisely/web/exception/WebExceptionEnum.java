@@ -1,7 +1,8 @@
 package io.github.wisely.web.exception;
 
-import com.wisely.framework.core.exception.handler.FrameworkCommonAssert;
+import io.github.wisely.core.exception.handler.FrameworkCommonAssert;
 import lombok.Getter;
+
 
 @Getter
 public enum WebExceptionEnum implements FrameworkCommonAssert {
