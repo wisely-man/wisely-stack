@@ -30,7 +30,7 @@ public enum CommonExceptionEnum implements FrameworkCommonAssert {
     // BusinessException 5000-5999
     NEED_LOGIN(5001, "common.login_required"),
     OPERATOR_FORBIDDEN(5002, "common.operator_forbidden"),
-    RESOURCE_NOT_FOUND(5003, "common.resource_not_found"),
+    RECORD_NOT_FOUND(5003, "common.record_not_found"),
     ;
 
     CommonExceptionEnum(int code, String message) {
