@@ -1,6 +1,6 @@
 package io.github.wisely.web.i18n.plugins;
 
-import com.wisely.framework.core.helper.StringHelper;
+import io.github.wisely.core.helper.StringHelper;
 import lombok.Getter;
 import lombok.Setter;
 import org.apache.commons.lang3.Strings;

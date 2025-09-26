@@ -32,6 +32,6 @@ public class RecordNotFoundException extends BusinessException {
     }
 
     public static RecordNotFoundException of(Object... params) {
-        return new RecordNotFoundException(null, CommonExceptionEnum.RESOURCE_NOT_FOUND.getCode(), CommonExceptionEnum.RESOURCE_NOT_FOUND.getMessage(), params);
+        return new RecordNotFoundException(null, CommonExceptionEnum.RECORD_NOT_FOUND.getCode(), CommonExceptionEnum.RECORD_NOT_FOUND.getMessage(), params);
     }
 }

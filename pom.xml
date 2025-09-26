@@ -65,7 +65,7 @@
         <logback.version>1.5.18</logback.version>
 
         <!-- spring and springboot -->
-        <springboot.version>3.5.5</springboot.version>
+        <springboot.version>3.5.6</springboot.version>
         <springboot-admin.version>3.5.2</springboot-admin.version>
         <spring-framework.version>6.2.10</spring-framework.version>
 
