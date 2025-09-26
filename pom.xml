@@ -76,11 +76,11 @@
         <sentinel.version>1.8.8</sentinel.version>
 
         <!-- kafka -->
-        <spring-kafka.version>3.3.9</spring-kafka.version>
+        <spring-kafka.version>3.3.10</spring-kafka.version>
         <apache-kafka.version>4.0.0</apache-kafka.version>
 
         <!-- 工具类 -->
-        <lombok.version>1.18.38</lombok.version>
+        <lombok.version>1.18.40</lombok.version>
         <guava.version>33.4.8-jre</guava.version>
         <commons-lang3.version>3.18.0</commons-lang3.version>
         <commons-pool2.version>2.12.1</commons-pool2.version>
@@ -93,13 +93,13 @@
         <protostuff-bom.version>1.8.0</protostuff-bom.version>
         <aspectj.version>1.9.6</aspectj.version>
         <druid.version>1.2.23</druid.version>
-        <hikari.version>6.3.2</hikari.version>
+        <hikari.version>6.3.3</hikari.version>
         <mybatis.version>2.2.2</mybatis.version>
         <pagehelper.version>5.3.1</pagehelper.version>
         <snakeyaml.version>2.4</snakeyaml.version>
 
         <!-- server -->
-        <tomcat.version>10.1.44</tomcat.version>
+        <tomcat.version>10.1.46</tomcat.version>
 
         <!-- jdbc -->
         <mysql.version>9.4.0</mysql.version>
