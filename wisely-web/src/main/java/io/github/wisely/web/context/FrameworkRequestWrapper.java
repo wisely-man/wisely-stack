@@ -20,7 +20,11 @@ import java.util.Vector;
 
 public class FrameworkRequestWrapper extends HttpServletRequestWrapper {
 
-
+    /**
+     * 构造器
+     *
+     * @param request 请求对象
+     */
     public FrameworkRequestWrapper(HttpServletRequest request) {
         super(request);
         // 将参数表，赋予给当前Map以便于持有request中的参数
@@ -32,6 +36,12 @@ public class FrameworkRequestWrapper extends HttpServletRequestWrapper {
         }
     }
 
+    /**
+     * 构造器
+     *
+     * @param request      请求对象
+     * @param extendParams 需要扩展的参数
+     */
     public FrameworkRequestWrapper(HttpServletRequest request, Map<String, Object> extendParams) {
         this(request);
         addAllParameters(extendParams);
@@ -42,6 +52,11 @@ public class FrameworkRequestWrapper extends HttpServletRequestWrapper {
     private final byte[] body;
 
 
+    /**
+     * 重写getInputStream方法
+     *
+     * @return ServletInputStream
+     */
     @Override
     public ServletInputStream getInputStream() {
         final ByteArrayInputStream in = new ByteArrayInputStream(body);
@@ -68,6 +83,12 @@ public class FrameworkRequestWrapper extends HttpServletRequestWrapper {
         };
     }
 
+    /**
+     * 重写getReader方法
+     *
+     * @return BufferedReader
+     * @throws IOException IO异常
+     */
     @Override
     public BufferedReader getReader() throws IOException {
         return new BufferedReader(new InputStreamReader(getInputStream()));
@@ -88,6 +109,12 @@ public class FrameworkRequestWrapper extends HttpServletRequestWrapper {
         return values[0];
     }
 
+    /**
+     * 重写getParameterValues方法
+     *
+     * @param name 参数名
+     * @return 参数数值数组
+     */
     @Override
     public String[] getParameterValues(String name) {
         String[] values = params.get(name);
@@ -115,6 +142,12 @@ public class FrameworkRequestWrapper extends HttpServletRequestWrapper {
         }
     }
 
+    /**
+     * 添加参数
+     *
+     * @param key   参数名
+     * @param value 参数值
+     */
     public void addParameter(String key, Object value) {
         if (value != null) {
             if (value instanceof String[])

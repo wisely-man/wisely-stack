@@ -18,7 +18,7 @@ import java.time.Duration;
 import java.util.Map;
 
 @UtilityClass
-public class SpelHelper {
+public class SpELHelper {
 
     /**
      * 线程安全的 SpEL 工具类
