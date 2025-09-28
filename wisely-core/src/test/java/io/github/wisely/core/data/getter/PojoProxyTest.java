@@ -77,7 +77,7 @@ public class PojoProxyTest {
         PojoProxy proxy = PojoProxy.proxy(person);
         List<String> changes = Lists.newArrayList();
         proxy.onPropertyChange(event ->
-                changes.add(event.propertyName() + ": from [" + event.oldValue() + "] to" + "["+ event.newValue() +"]"));
+                changes.add(event.propertyName() + ": from [" + event.oldValue() + "] to " + "["+ event.newValue() +"]"));
 
         proxy.set("name", "李四");
         proxy.set("age", 20);
@@ -85,6 +85,10 @@ public class PojoProxyTest {
         proxy.set("hobbies", Lists.newArrayList("balls"));
 
         System.out.println(changes);
+        Assertions.assertEquals(3, changes.size());
+        Assertions.assertEquals("name: from [张三] to [李四]", changes.getFirst());
+        Assertions.assertEquals("age: from [18] to [20]", changes.get(1));
+        Assertions.assertEquals("hobbies: from [[reading, balls]] to [[balls]]", changes.get(2));
     }
 
 }
