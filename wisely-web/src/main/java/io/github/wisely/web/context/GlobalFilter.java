@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.MDC;
+import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 
 import java.io.IOException;
@@ -16,8 +17,8 @@ import java.io.IOException;
  * 用于request的包装，支持流的重复读取
  */
 @Slf4j
-@Order(Integer.MIN_VALUE)
-public class FrameworkFilter implements Filter {
+@Order(Ordered.HIGHEST_PRECEDENCE + 1000)
+public class GlobalFilter implements Filter {
 
     /**
      * 请求ID

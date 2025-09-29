@@ -7,10 +7,10 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.core.Ordered;
 
 
-@ConfigurationProperties(prefix = "plugins.filter.framework")
+@ConfigurationProperties(prefix = "plugins.filter.global")
 @Setter
 @Getter
-public class FrameworkFilterProperties {
+public class GlobalFilterProperties {
 
     /**
      * 是否开启

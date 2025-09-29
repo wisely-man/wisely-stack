@@ -10,7 +10,7 @@ import io.github.wisely.core.exception.eum.CommonExceptionEnum;
 import io.github.wisely.core.helper.StringHelper;
 import io.github.wisely.core.helper.ValidHelper;
 import io.github.wisely.core.spring.helper.SpringHelper;
-import io.github.wisely.web.context.FrameworkRequestWrapper;
+import io.github.wisely.web.context.GlobalRequestWrapper;
 import io.github.wisely.web.context.Result;
 import io.github.wisely.web.i18n.MessageConvert;
 import jakarta.annotation.Nonnull;
@@ -36,6 +36,7 @@ import java.util.Enumeration;
 import java.util.Map;
 import java.util.Optional;
 
+
 /**
  * RequestHelper
  */
@@ -45,14 +46,14 @@ public class RequestHelper {
 
     private final static String REQUEST_DATA = "REQUEST_DATA";
 
-    private final static ThreadLocal<FrameworkRequestWrapper> THREAD_LOCAL_MAP = new ThreadLocal<>();
+    private final static ThreadLocal<GlobalRequestWrapper> THREAD_LOCAL_MAP = new ThreadLocal<>();
 
 
     // ================================
     // ThreadLocal 管理
     // ================================
 
-    public static void setRequest(FrameworkRequestWrapper request) {
+    public static void setRequest(GlobalRequestWrapper request) {
         THREAD_LOCAL_MAP.set(request);
     }
 
@@ -76,7 +77,7 @@ public class RequestHelper {
     @Nullable
     public static HttpServletRequest getRequest() {
 
-        FrameworkRequestWrapper requestWrapper = THREAD_LOCAL_MAP.get();
+        GlobalRequestWrapper requestWrapper = THREAD_LOCAL_MAP.get();
         if (ValidHelper.isNotNull(requestWrapper)) {
             return requestWrapper;
         }
@@ -391,11 +392,11 @@ public class RequestHelper {
     /**
      * 获取或创建请求包装器（支持重复读）
      */
-    private static FrameworkRequestWrapper getOrCreateWrapper(HttpServletRequest request) {
-        if (request instanceof FrameworkRequestWrapper wrapper) {
+    private static GlobalRequestWrapper getOrCreateWrapper(HttpServletRequest request) {
+        if (request instanceof GlobalRequestWrapper wrapper) {
             return wrapper;
         }
-        return new FrameworkRequestWrapper(request);
+        return new GlobalRequestWrapper(request);
     }
 
     /**
@@ -403,7 +404,7 @@ public class RequestHelper {
      */
     private static void getInputFromJson(Map<String, Object> input, HttpServletRequest request) {
         try {
-            FrameworkRequestWrapper wrapper = getOrCreateWrapper(request);
+            GlobalRequestWrapper wrapper = getOrCreateWrapper(request);
             try (BufferedReader reader = wrapper.getReader()) {
                 StringBuilder body = new StringBuilder();
                 String line;
