@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
@@ -32,18 +33,25 @@ public class PojoProxyTest {
         String city;
     }
 
+
+    private Person person;
+    private PojoProxy proxy;
+
+    @BeforeEach
+    public void setup() {
+        person = new Person("张三", 18, new Address("上海"), Lists.newArrayList("reading", "balls"));
+        proxy = PojoProxy.proxy(person);
+    }
+
+
     @Test
     public void proxyTest() {
-        Person person = new Person("张三", 18, new Address("上海"), Lists.newArrayList("reading", "balls"));
-        PojoProxy proxy = PojoProxy.proxy(person);
         Assertions.assertEquals("张三", proxy.get("name"));
     }
 
 
     @Test
     public void setTest() {
-        Person person = new Person("张三", 18, new Address("上海"), Lists.newArrayList("reading", "balls"));
-        PojoProxy proxy = PojoProxy.proxy(person);
         proxy.set("name", "李四");
         Assertions.assertEquals("李四", person.name);
 
@@ -54,8 +62,6 @@ public class PojoProxyTest {
 
     @Test
     public void getTest() {
-        Person person = new Person("张三", 18, new Address("上海"), Lists.newArrayList("reading", "balls"));
-        PojoProxy proxy = PojoProxy.proxy(person);
 
         // 路径获取
         Assertions.assertEquals("上海", proxy.getString("address.city"));
@@ -73,8 +79,6 @@ public class PojoProxyTest {
 
     @Test
     public void listenerTest() {
-        Person person = new Person("张三", 18, new Address("上海"), Lists.newArrayList("reading", "balls"));
-        PojoProxy proxy = PojoProxy.proxy(person);
         List<String> changes = Lists.newArrayList();
         proxy.onPropertyChange(event ->
                 changes.add(event.propertyName() + ": from [" + event.oldValue() + "] to " + "["+ event.newValue() +"]"));
