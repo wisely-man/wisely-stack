@@ -26,5 +26,5 @@ public class GlobalFilterProperties {
     /**
      * filter排序
      */
-    private Integer order = Ordered.HIGHEST_PRECEDENCE;
+    private Integer order = Ordered.HIGHEST_PRECEDENCE + 1000;
 }

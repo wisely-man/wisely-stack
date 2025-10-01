@@ -31,7 +31,6 @@ import java.util.Arrays;
 @Slf4j
 @Configuration(proxyBeanMethods = false)
 @EnableConfigurationProperties(I18nProperties.class)
-@AutoConfigureOrder(Ordered.HIGHEST_PRECEDENCE + 9)
 public class I18nPlugin extends AbstractPlugin {
 
     @Override
