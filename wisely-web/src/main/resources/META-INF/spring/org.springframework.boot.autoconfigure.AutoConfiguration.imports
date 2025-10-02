@@ -1,3 +1,4 @@
 io.github.wisely.web.context.plugins.GlobalFilterPlugin
 io.github.wisely.web.exception.plugins.ExceptionPlugin
 io.github.wisely.web.i18n.plugins.I18nPlugin
+io.github.wisely.web.http.plugins.HttpPlugin
